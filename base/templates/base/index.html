@@ -1,0 +1,214 @@
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My MLSA Event Site</title>
+    <link rel="stylesheet" href="{% static '/css/index.css' %}" class="css">
+    <link rel="icon" type="image/png" sizes="40x32" href="static/images/MSLearn_SA_badge_generic_rgb_300ppi_100753.png">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&family=Poppins:wght@300;500&family=Red+Hat+Display:wght@500;700;900&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Third Party Library (Animate On Scroll - AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    
+    <!-- Custom Js -->
+    <script src="{% static 'js/script.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Main Nav -->
+        <nav id="nav">
+            <div class="nav-brand"><h1><a class="nav-link" href="#"><i class="fa-solid fa-rectangle-code"></i>
+                <small class="ambassador">Am</small>
+                 <div class="nav-brand-flex">
+                    <small class="student">Student</small>
+                    <small class="sador">bassador</small>
+                 </div>
+                 </a>
+                </h1>
+            </div>
+            <ul class="nav-items">
+                <li class="nav-item"><a href="#profile">Profile</a></li>
+                <li class="nav-item"><a href="#events">Events</a></li>
+                <li class="nav-item"><a href="#memories-img">Moments</a></li>
+            </ul>
+            <div class="hamburger-menu">
+                <button class="btn" onclick="openNav()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Nav (Curtain Menu) -->
+        <!-- The overlay -->
+        <div id="myNav" class="overlay">
+            <!-- Button to close the overlay navigation -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        
+            <!-- Overlay content -->
+            <div class="overlay-content">
+            <a href="#profile" onclick="closeNav()">Profile</a>
+            <a href="#events" onclick="closeNav()">Events</a>
+            <a href="#memories-img" onclick="closeNav()">Moments</a>
+            </div>
+        </div>
+
+        <!-- hero -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Welcome to Microsoft Learn Student Ambassadors;</h1>
+                <h2>Accra Technical University Chapter.</h2>
+                <div class="hero-caption">
+                    <p>Microsoft Learn Student Ambassadors is a program for student technologists in higher education who love to help their fellow students gain technical skills by hosting events and workshops both in-person and virtually
+                         and even if you want to host a hybrid event, you’re allowed to do so. 
+                         <a class="link-here" style="display: block; font-size: 18.5px; padding: .3em;"
+                         href="https://prince-adimado.hashnode.dev/all-you-need-to-know-about-microsoft-learn-student-ambassadors-program-mlsa">Find out more here.</a></p>
+                </div>
+                <div class="call-action">
+                    <a class="btn-action" href="#events">Go to Events</a>
+                </div>
+            </div>
+
+            <div class="mlsa-logo-atu">
+                <img class="mlsa-logo animated" src="static/images/MSLearn_SA_badge_generic_rgb_300ppi_100753.png" alt="MLSA logo">
+                <img class="atu-logo" src="static/images/atu-logo.png" alt="Accra Technical University logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Prince Adimado's Profile -->
+        <section id="profile">
+            <h1>Profile</h1>
+            <div class="my-profile">
+                <img src="static/images/Prince Adimado (2).png" alt="Photo of Prince Adimado">
+                <div class="profile-txt">
+                    <div class="text-bg">
+                        <p>
+                            <b>Prince Adimado</b> is a Jr. Web Developer interested in Backend Web Development using Python Django. 
+                            He also loves to share his passion by hosting tech events as a Microsoft Learn Student Ambassador. He believes in the process and knows he'll be great at technology someday.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- End of Profile Section -->
+
+        <!-- Events Cards -->
+
+        <section id="events">
+            <div class="row-events">
+                <h1>Event Hosted and Contributions.</h1>
+                <div class="collasped-row">
+                    {% for event in events %}
+                    <div class="flyer-card" data-aos="zoom-in">
+                        <img src="/images/{{ event.event_image }}" alt="">
+                        <!-- <div class="card-body"> -->
+                        <div class="card-content">
+                            <h2>Details</h2>
+                            <p>
+                                {{ event.event_description }}
+                            </p> 
+                            <div class="card-btn">
+                                <a target="_blank" rel="noopener noreferrer" href="{{ event.event_link}}">Event Recording</a>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section> 
+        <!-- End of Event Cards -->
+        
+        <!-- Memories Section -->
+        <section id="memories-img">
+            <h1>Moments</h1>
+            <div class="admin-img">
+                <img src="static/images/photo-1 (2).jpg" alt="pictures of three student ambassadors">
+                <div class="about-quote">
+                    <div class="quote-main">
+                        <p>
+                            This picture was taken after a successful Microsoft Power Platform Event organized by ATU Library in their maiden edition ATU Library Tech Event. 
+                            We  Student Ambassadors played a role in this event and we thank God that it was successful. We had a full house at the venue which was BTech Large Lab where students trooped in their numbers to come and learn.
+                            I thank Mr. Obed for putting us on and also, to ATU Library which is the best university library in Ghana and even Africa. Also, thanks to the Microsoft MVPs who graced the event.
+                            Thanks to ATU CS Students and the Computer Science Department.
+                        </p>
+                        <small><i> ~ Demystifying Microsoft Power Platform.</i></small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- End of Memories Section -->
+
+        <!-- Footer -->
+
+        <footer>
+            <div class="three-parts">
+                <div class="first-part-socials">
+                    <h2>Social Media Handles</h2>
+                    <div class="media-handles">
+                        <ul>
+                            <li><a target="_blank" rel="noopener noreferrer"  href="https://github.com/primado"><i class="fa-brands fa-github"></i> GitHub</li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/prince-adimado-primado/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="https://instagram.com/_primado"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/_primado"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                            <li><a target="_blank" rel="noopener noreferrer" href="https://linktr.ee/prince_adimado"><i class="fa-solid fa-tree"></i> My Link Tree</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="apply-now" class="first-part-apply">
+                    <h2>Apply to be Microsoft Learn Student Ambassador.</h2>
+                    <div class="website-url">
+                        <a target="_blank" rel="noopener noreferrer"rel="noopener noreferrer" href="https://studentambassadors.microsoft.com/en-us/">Apply Now</a>
+                    </div>
+                </div>
+                <br>
+
+                <!-- Devloper's Section -->
+
+                <div class="developers">
+                    <div class="collasped-devs">
+                        <h1>Contributers</h1>
+                        <div class="dev-flex">
+                            <div class="dev-one">
+                                <img src="static/images/Prince Adimado (2).png" alt="Prince Adimado's Picture">
+                                <div class="dev-card-body">
+                                    <h2>Prince Adimado</h2>
+                                    <div class="dev-btn">
+                                        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/prince-adimado-primado/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dev-two">
+                                <img src="static/images/Onihani new.jpg" alt="Nathaniel Quansah's Picture">
+                                <div class="dev-card-body">
+                                    <h2>Nathaniel Quansah</h2>
+                                    <div class="dev-btn">
+                                        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/onihani/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- End of Footer -->
+
+    </main>
+</body>
+</html>
+
+{% endblock content %}

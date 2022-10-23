@@ -1,0 +1,1583 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+header {
+  background-color: #1f2937;
+  color: #fff;
+  width: 100%;
+  padding-bottom: 50px;
+}
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+  position: relative;
+  overflow: hidden;
+}
+#nav .nav-brand h1 {
+  font-size: 1.5em;
+  padding: 0.2em 0.5em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.nav-brand-flex {
+  /* border: 1px solid red; */
+  padding: 0.2em;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav .nav-brand h1 .ambassador {
+  font-size: 2.3em;
+  padding-left: 0.5em;
+  line-height: 1.5em;
+}
+
+.nav-brand .nav-link {
+  padding: 0;
+  font-size: 1em;
+  text-decoration: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/* #nav .fa-rectangle-code {
+    color: #fff;
+    background-color: green;
+} */
+
+#nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* padding-left: 35em; */
+  /* flex: .8 .2 .5em; */
+}
+
+/* Mobile Nav */
+@media only screen and (max-width: 1024px) {
+  #nav ul {
+    display: none;
+  }
+}
+
+#nav ul li {
+  padding: 1em 1.5em;
+  list-style-type: none;
+}
+#nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+#nav ul li a:hover {
+  content: "";
+  border-bottom: 2px solid #fff;
+  color: rgb(66, 122, 225);
+}
+#nav ul li a:active {
+  color: rgb(66, 122, 225);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hamburger-menu .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1em;
+  background-color: #50e6ff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #000;
+}
+
+.hamburger-menu .btn:hover {
+  background-color: #58c8dc;
+  color: #fff;
+}
+
+/* Mobile Curtian meu */
+/* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 0;
+  width: 100vw;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0); /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/**************** Hero ****************/
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.3em 2em;
+  padding: 0 1em;
+}
+
+.hero .hero-text {
+  /* border: 2px solid yellow; */
+  margin-top: -5em;
+  padding: 2em 2em;
+}
+.hero .hero-text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 3em;
+  padding: 0 0.3em;
+}
+
+.hero .hero-text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  padding: 0.4em;
+}
+
+.hero-text .hero-caption p {
+  margin: 0.1em 0;
+  padding: 10px 7px;
+  font-size: 1.2em;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+a {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+}
+.call-action {
+  padding: 20px 7px;
+}
+.call-action a {
+    padding: .7em .9em;
+    text-decoration: none;
+    border-radius: 10px;
+    /* background-color: #3882f6; */
+    background-color: #0078d4;
+    font-weight: 700;
+    margin: 0 0;
+}
+
+.call-action a:hover {
+  /* background-color: #0367b4; */
+  background-color: #203a61;
+  border: 5px solid #0078d4;
+}
+
+.mlsa-logo-atu {
+  /* border: 20px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-left: 2em;
+  padding: 1em;
+}
+.mlsa-logo-atu .atu-logo {
+  max-width: 70%;
+  margin-top: 30px;
+}
+.mlsa-logo-atu .mlsa-logo {
+  max-width: 110%;
+}
+
+/* animated logo */
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.mlsa-logo.animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+/* animated logo media queries */
+@media only screen and (max-width: 600px) {
+  .mlsa-logo.animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+}
+
+/**** Header Media Queries *****/
+
+@media only screen and (max-width: 600px) {
+  header {
+    width: 100%;
+  }
+
+  #nav {
+    display: flex;
+    padding: 1em;
+  }
+
+  #nav .nav-brand h1 {
+    font-size: 1.3em;
+    /* padding: 0 0em; */
+  }
+
+  #nav .nav-brand h1 .ambassador {
+    font-size: 2em;
+    padding-left: 0.1em;
+  }
+
+  .nav-brand .nav-link {
+    font-size: 1em;
+  }
+
+  #nav ul {
+    /* display: flex; */
+    justify-content: end;
+    align-items: end;
+    padding: 0.7em 0.7em 0.5em 8em;
+    flex-direction: column;
+  }
+
+  #nav ul li {
+    padding: 0.8em;
+    list-style-type: none;
+  }
+
+  #nav ul li a {
+    font-size: 1.2em;
+  }
+
+  /********** End of Nav Bar *******/
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    /* border: 1px solid #fff; */
+  }
+
+  .hero .hero-text {
+    margin-top: -2.5em;
+    padding: 1.2em;
+  }
+
+  .hero .hero-text h1 {
+    font-size: 2.9em;
+    font-weight: 700;
+    line-height: 1.25em;
+    text-align: left;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 1.5em;
+    text-align: left;
+  }
+
+  .hero-text .hero-caption p {
+    margin: 0.05em;
+    line-height: 1.6em;
+    text-align: left;
+  }
+
+  a {
+    font-size: 1.25em;
+  }
+
+  .call-action {
+    padding: 1em 1em;
+  }
+
+  .call-action a {
+    padding: 0.7em 2em;
+  }
+
+  .mlsa-logo-atu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1.8em;
+    padding-top: -2em;
+  }
+
+  .mlsa-logo-atu .mlsa-logo {
+    max-width: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mlsa-logo-atu .atu-logo {
+    max-width: 160px;
+  }
+}
+/******** End of Media Queries 600px ********/
+
+/************* Header @300 max-width *********/
+
+@media only screen and (max-width: 300px) {
+  .mlsa-logo.animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+
+  #nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-left: 3em;
+  }
+
+  #nav ul li a {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .nav-brand .nav-link {
+    font-size: 0.7em;
+  }
+
+  /******** Hero ********/
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+  }
+
+  .hero .hero-text {
+    margin-top: -1em;
+  }
+
+  .hero .hero-text h1 {
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 0.99em;
+    padding-top: 0.5em;
+  }
+
+  .hero-text .hero-caption p {
+    padding: 0.15em 0.1em;
+    font-size: 0.9em;
+    text-align: left;
+  }
+
+  .call-action {
+    padding: 1em 0.5em;
+    /* border: 1px solid red; */
+    margin: 0.5em;
+  }
+
+  .call-action a {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.9em 1.2em;
+  }
+
+  .mlsa-logo-atu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: -2em;
+    margin-top: -1.9em;
+  }
+
+  .mlsa-logo-atu .atu-logo {
+    max-width: 70%;
+    margin-top: 0.4em;
+  }
+
+  .mlsa-logo-atu .mlsa-logo {
+    max-width: 80%;
+  }
+}
+/*********** End of Header @300px Media Queries ******/
+
+/******** Header @390px media queries  *******/
+
+@media only screen and (max-width: 390px) {
+  #nav .nav-brand h1 {
+    font-size: 1.3em;
+    padding: 0.3em 0.8em;
+  }
+
+  #nav ul {
+    padding-left: 5em;
+  }
+
+  .hero .hero-text h1 {
+    font-size: 2.3em;
+    padding-top: 0.5em;
+  }
+
+  .mlsa-logo-atu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mlsa-logo-atu .mlsa-logo {
+    margin-top: -1.9em;
+  }
+
+  .mlsa-logo-atu .atu-logo {
+    margin-top: 0.9em;
+  }
+}
+/********* End of Header 390px media queries ******/
+
+/****** Header @412px Media Queries *****/
+
+@media only screen and (max-width: 412px) {
+  #nav ul {
+    padding-left: 1em;
+  }
+
+  .mlsa-logo-atu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero .hero-text {
+    padding: 1.9em 0.68em;
+  }
+
+  #nav .nav-brand h1 {
+    font-size: 1.19em;
+  }
+
+  .hero .hero-text h1 {
+    font-size: 1.69em;
+  }
+
+  .hero .hero-text h2 {
+    font-size: 1.1em;
+  }
+
+  .hero-text .hero-caption p {
+    font-size: 0.82em;
+  }
+
+  .mlsa-logo-atu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5em;
+    margin-top: -1.3em;
+  }
+
+  .mlsa-logo-atu .mlsa-logo {
+    max-width: 55%;
+  }
+
+  .mlsa-logo-atu .atu-logo {
+    max-width: 43%;
+  }
+
+  .call-action {
+    padding: 1.2em 1.5em;
+  }
+
+  .call-action a {
+    padding: 0.78em 1.2em;
+  }
+}
+/****** End of Header @412px Media Queries  ******/
+
+/******************* Profile Section  ********************/
+
+#profile {
+  /* background-color: #0367b4; */
+  background-color: #50e6ff;
+  padding: 4em 5em;
+}
+
+#profile h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  text-align: center;
+}
+
+#profile .my-profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  #profile .my-profile {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.my-profile img {
+  max-width: 500px;
+  display: block;
+  object-fit: cover;
+  margin: 0 2.1em;
+  border-radius: 30px;
+  border: 10px solid rgba(146, 58, 212, 0.8);
+}
+
+.profile-txt .text-bg {
+  background-color: #0078d4;
+  padding: 3em;
+  border-radius: 20px;
+  border: 10px solid rgba(224, 212, 88, 1);
+  font-family: "Poppins", sans-serif;
+}
+
+.profile-txt p {
+  color: #fff;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.profile-txt p b {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+/************ Profile Media Queries *******/
+
+@media only screen and (max-width: 600px) {
+  #profile {
+    padding: 1.5em;
+  }
+
+  #profile h1 {
+    font-size: 3.5em;
+    color: #000;
+    text-align: center;
+  }
+
+  #profile .my-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+  }
+
+  .my-profile img {
+    display: block;
+    max-width: 350px;
+    object-fit: cover;
+  }
+
+  .profile-txt {
+    max-width: 385px;
+    display: block;
+  }
+
+  .profile-txt p {
+    font-size: 1.1em;
+    line-height: 1.65em;
+  }
+
+  .profile-txt {
+    padding: 2em 1em;
+  }
+
+  .profile-txt p b {
+    font-size: 1.3em;
+    font-weight: 900;
+  }
+}
+
+/********** End of Profile 600px media queries ******/
+
+/********* Profle @300 max-width  Media queries  ******/
+
+@media only screen and (max-width: 300px) {
+  #profile h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+  }
+
+  .my-profile img {
+    max-width: 210px;
+    display: block;
+    object-fit: cover;
+    margin: 0 2.1em;
+  }
+
+  .profile-txt .text-bg {
+    padding: 1em;
+  }
+
+  .profile-txt p {
+    color: #fff;
+    font-size: 1em;
+    text-align: left;
+    line-height: 1.5em;
+  }
+
+  .profile-txt p b {
+    font-size: 1.3em;
+  }
+}
+/****** End of Profile @300 media queries  ******/
+
+/******* Profile @390 media qeries *****/
+
+@media only screen and (max-width: 390px) {
+  #profile h1 {
+    font-size: 2.3em;
+  }
+
+  .my-profile img {
+    max-width: 250px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .profile-txt .text-bg {
+    padding: 1.7em;
+  }
+
+  .profile-txt p {
+    font-size: 1.23em;
+  }
+
+  .profile-txt p b {
+    font-size: 1.25em;
+  }
+} /**** End of Profile @390px media queries ****/
+
+/***** Profile @412px media queries ****/
+
+@media only screen and (max-width: 412px) {
+  #profile h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  .my-profile img {
+    max-width: 210px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .profile-txt .text-bg {
+    padding: 1.2em;
+  }
+
+  .profile-txt p {
+    font-size: 0.93em;
+    padding: 0.5em 0.5em;
+  }
+}
+
+/****   Events CSS    ****/
+
+#events {
+  background-color: rgba(146, 199, 138, 0.31);
+  padding: 1.2em 3em;
+  width: 100%;
+}
+
+.collasped-row {
+  display: grid;
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  padding-bottom: 4.5em;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  .collasped-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .collasped-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1350px) {
+  .collasped-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.row-events h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5em;
+  font-weight: 700;
+  padding: 1.2em 0;
+  text-align: center;
+  color: hsl(223, 71%, 41%);
+}
+
+.flyer-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* max-width: 400px; */
+  /* margin: 20px 20px; */
+}
+
+.flyer-card img {
+    /* width: 400px; */
+    border-radius: 15px 15px 0 0;
+    max-width: 400px;
+    display: block;
+    object-fit: cover;
+
+}
+
+.card-content {
+    width: 400px;
+    /* background-color: rgb(41, 80, 255); */
+    border-radius: 0 0 15px 15px;
+    background-color: hsl(223, 47%, 23%);
+}
+
+.card-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-align: center;
+    padding: .4em 1.5em;
+    color: #fff;
+    
+}
+
+.card-content p {
+  padding: 0.3em 2em;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Red Hat Display", sans-serif;
+  color: #fff;
+  font-weight: 60;
+}
+
+.flyer-card .card-btn {
+  /* border: 1px solid red; */
+  padding: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flyer-card .card-btn a {
+  text-align: center;
+  padding: 0.8em 4em;
+  background-color: #50e6ff;
+  text-decoration: none;
+  border-radius: 15px;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #000;
+}
+
+.flyer-card .card-btn a:hover {
+  background-color: #58c8dc;
+  color: #fff;
+}
+
+/****  Events Media Queries  ****/
+
+@media only screen and (max-width: 600px) {
+  /* .collasped-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  .row-events {
+    margin-top: -1.8em;
+    margin-bottom: 0.9em;
+  }
+
+  .row-events h1 {
+    font-size: 2.5em;
+    color: hsl(223, 71%, 41%);
+  }
+
+  .flyer-card img {
+    max-width: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-content p {
+    line-height: 1.29em;
+  }
+}
+
+/******** End of Events 600px Media Quesries ****/
+
+/************* Events Section @300px max-width ******/
+
+@media only screen and (max-width: 300px) {
+  .row-events h1 {
+    font-size: 1.5em;
+    margin-top: 0.9em;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .flyer-card img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card-content {
+    max-width: 250px;
+    height: auto;
+  }
+
+  .card-content h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+  }
+
+  .card-content p {
+    font-size: 1.1em;
+    line-height: 1.1em;
+  }
+
+  .flyer-card .card-btn {
+    padding: 1.2em 5em;
+  }
+
+  .flyer-card .card-btn a {
+    text-align: center;
+    padding: 0.5em 2.3em;
+    font-size: 0.99em;
+    font-weight: 900;
+  }
+} /************ End of Events @300px max-width media queries *******/
+
+/****** Events @390 media queries *****/
+
+@media only screen and (max-width: 390px) {
+  .row-events h1 {
+    font-size: 1.55em;
+    padding: 1.3em;
+  }
+
+  .flyer-card img {
+    max-width: 270px;
+  }
+
+  .card-content {
+    max-width: 270px;
+    height: auto;
+  }
+
+  .card-content p {
+    padding: 0.3em 0.5em;
+  }
+
+  .flyer-card .card-btn a {
+    padding: 1em;
+  }
+} /****** End of Events @390px media Queries ******/
+
+/****** Events @412ps media queries *******/
+@media only screen and (max-width: 412px) {
+  .card-content h2 {
+    font-size: 1.2em;
+  }
+
+  /* .collasped-row {
+    padding-top: 0.8em;
+  } */
+
+  .row-events h1 {
+    font-size: 1.2em;
+    padding-top: 2em;
+    font-weight: 900;
+  }
+
+  .flyer-card img {
+    max-width: 300px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .card-content {
+    max-width: 300px;
+  }
+
+  .flyer-card .card-btn {
+    padding: 1em 1em;
+  }
+
+  .flyer-card .card-btn a {
+    padding: 0.55em 1.1em;
+  }
+
+  .card-content p {
+    padding: 0.1em 0.5em;
+    font-size: 0.89em;
+    line-height: 1.5em;
+  }
+} /****** End of Event @412px media queries *****/
+
+/******** Memeories Section  ************/
+#memories-img {
+  padding: 4.5em 2em;
+  /* border: 3px solid red; */
+  background-color: #76a0f4;
+  width: 100%;
+}
+
+#memories-img h1 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-size: 3em;
+  padding-bottom: 0.8em;
+}
+
+.admin-img {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .admin-img {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.admin-img img {
+  width: 390px;
+  height: auto;
+  margin: 1.5em;
+  border: 10px solid #ffc623;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+#memories-img .about-quote {
+  border: 10px solid rgba(146, 58, 212, 0.8);
+  padding: 3.5em;
+  background-color: #ffc623;
+  margin: 0 1em;
+  border-radius: 20px;
+}
+
+#memories-img .about-quote .quote-main > p {
+  color: #000;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+#memories-img .about-quote .quote-main > small {
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Red Hat Display", sans-serif;
+  padding: 2em 0;
+}
+
+/**** Memories IMG Media Queries  ****/
+
+@media only screen and (max-width: 600px) {
+  #memories-img h1 {
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  .admin-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .admin-img img {
+    display: block;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  #memories-img .about-quote {
+    display: block;
+    padding: 2em;
+  }
+
+  #memories-img .about-quote .quote-main > p {
+    line-height: 1.39em;
+    border-radius: 20px;
+    text-align: center;
+  }
+} /******** End of Memories @600 max-width media queries *****/
+
+/******** Memories @300 max-width media queries *****/
+
+@media only screen and (max-width: 300px) {
+  #memories-img .about-quote {
+    padding: 0.7em;
+  }
+
+  #memories-img h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #memories-img .about-quote .quote-main > p {
+    font-size: 1em;
+    line-height: 1.26em;
+  }
+
+  #memories-img .about-quote .quote-main > small {
+    font-size: 1.3em;
+  }
+}
+/****** End of Memeries @300px max-width media queries ****/
+
+/****** Memeries @390 median queries ****/
+
+@media only screen and (max-width: 390px) {
+  .admin-img img {
+    max-width: 280px;
+  }
+
+  #memories-img .about-quote {
+    padding: 1.2em;
+  }
+} /**** End of Memories Media Queries ****/
+
+/******** Memories @412px media Queries *****/
+@media only screen and (max-width: 412px) {
+  #memories-img h1 {
+    font-size: 1.8em;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .admin-img img {
+    max-width: 210px;
+  }
+
+  #memories-img .about-quote {
+    padding: 0.5em;
+    margin: 0 0.1em;
+  }
+
+  #memories-img .about-quote .quote-main > p {
+    font-size: 0.99em;
+    padding: 0.8em;
+  }
+
+  #memories-img .about-quote .quote-main > small {
+    font-size: 1em;
+  }
+}
+
+/**** Footer Section ****/
+
+footer {
+  background-color: #1f2937;
+  padding: 1.5em 2em;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+
+.first-part-socials {
+  /* border: 2px solid #fff; */
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.first-part-socials h2 {
+  font-size: 2.5em;
+  color: #fff;
+  padding: 1em;
+}
+
+.media-handles ul {
+  list-style-type: none;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.media-handles ul > li {
+  line-height: 1.8em;
+  padding: 0.5em;
+  border-right: 0.2em solid #0078d4;
+}
+
+.media-handles ul > li:last-child {
+  border: none;
+}
+
+.media-handles ul li a {
+  display: block;
+  /* border: 1px solid red; */
+  padding: 0.5em 1em;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.media-handles ul li a:hover {
+  color: #3882f6;
+}
+
+.media-handles ul li a:visited {
+  color: #ffc623;
+}
+
+.media-handles ul li a:active {
+  color: #50e6ff;
+}
+
+.media-handles li i {
+  color: #fff;
+  padding: 0 0.3em;
+  font-size: 1.5em;
+}
+
+.first-part-apply {
+    padding: 1em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3882f6;
+    padding: 2em;
+    margin: 1em 8em;
+    border-radius: 20px;
+    border-top: 3px solid #fff;
+    box-shadow: -16px 15px 27px -6px rgba(250,247,250,0.2);
+}
+
+.first-part-apply h2 {
+  font-size: 1.7em;
+  padding: 0.8em 0.8em;
+}
+
+.first-part-apply .website-url {
+  /* background-color: #166df9; */
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: #3882f6;
+}
+
+.first-part-apply .website-url:hover {
+  background-color: #1268f2;
+}
+
+.first-part-apply .website-url a {
+  font-size: 1.4em;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  display: block;
+}
+
+.first-part-apply .website-url a:hover {
+  color: #000 !important;
+  font-weight: 900;
+}
+
+/******* End of Socail Handles *****/
+
+/****** Footer Media Queries *****/
+
+@media only screen and (max-width: 600px) {
+  .first-part-socials {
+    padding-top: -2em;
+  }
+
+  .first-part-socials h2 {
+    font-size: 1.6em;
+  }
+
+  .first-part-socials .media-handles ul {
+    /* list-style-type:disc; */
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    color: #fff;
+    flex-direction: column-reverse;
+    /* border: 2px solid #fff; */
+    margin-left: -12em;
+  }
+
+  .media-handles ul > li {
+    line-height: 0;
+    padding: 0.1em 0em;
+    border-right: none;
+    margin: 0.8em 0;
+
+    /* border: 1px solid #fff; */
+  }
+
+  .media-handles ul li > a {
+    display: block;
+    padding: 0.2em 0.2em;
+  }
+
+  .first-part-apply {
+    color: rgb(242, 242, 242);
+    display: flex;
+    flex-direction: row;
+    padding: 1em 2em;
+    margin: 0;
+  }
+
+  .first-part-apply h2 {
+    font-size: 1em;
+    padding: 0.5em 0.1em;
+    /* border: 2px solid red; */
+    display: inline !important;
+    word-wrap: normal;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .first-part-apply .website-url a {
+    font-size: 0.8em;
+    text-decoration: none;
+    padding: 0.2em 0.5em;
+    display: block;
+    text-align: center;
+  }
+}
+/********** End of Footer @600 media queries *****/
+
+/****** Footer @300px max-width media queries  ******/
+
+@media only screen and (max-width: 300px) {
+  .first-part-socials h2 {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .media-handles ul {
+    /* border: 1px solid red; */
+    padding-left: 8em;
+  }
+
+  .media-handles ul li a {
+    line-height: 0.5em;
+    padding: 0.5em 0.5em;
+  }
+
+  .media-handles li i {
+    font-size: 1.23em;
+  }
+
+  .first-part-apply {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+
+  .first-part-apply h2 {
+    font-size: 0.91em;
+    font-weight: 500;
+  }
+
+  .first-part-apply .website-url a {
+    font-size: 0.99em;
+    padding: 0.5em 1.1em;
+  }
+}
+/****** End of Footer @300px max-width media queries *****/
+
+/***** Footer @390 media Queries  ****/
+
+@media only screen and (max-width: 390px) {
+  .first-part-socials h2 {
+    font-size: 1.39em;
+  }
+
+  .first-part-apply {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .first-part-apply h2 {
+    font-size: 1.03em;
+  }
+
+  .first-part-apply .website-url a {
+    padding: 0.2em 1em;
+    font-size: 1.09em;
+  }
+} /*****  End of Footer @390px media queries  *****/
+
+/***** Footer @412 Media Queries ******/
+@media only screen and (max-width: 412px) {
+  .media-handles ul li > a {
+    font-size: 1em;
+    display: block;
+  }
+
+  .first-part-socials h2 {
+    font-size: 1.23em;
+    font-weight: 700;
+  }
+
+  .media-handles ul {
+    padding-left: 3.9em;
+  }
+
+    .first-part-apply {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: .8em .8em;
+        max-width: 17em;
+        margin-left: 1.4em;
+    }
+
+  .first-part-apply h2 {
+    font-size: 0.8em;
+  }
+
+  .first-part-apply .website-url a {
+    font-size: 0.99em;
+    padding: 0.2em 0.8em;
+  }
+}
+
+/*************** Developers sections   ************************/
+
+.developers {
+    border-top: 2px solid #fff;
+    padding: 2em;
+    margin: .8em;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px 10px 0 0;
+}
+
+.developers h1 {
+    text-align: center;
+    color: #fff;
+    padding: 1em;
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.collasped-devs .dev-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  /* border: 1px solid #fff; */
+}
+
+.dev-flex img {
+    max-width: 200px;
+    margin-bottom: -.4em;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    box-shadow: -16px 14px 21px -6px rgba(250,247,250,0.11);
+}
+
+.dev-flex .dev-one {
+  padding: 1em 5em;
+  
+}
+
+.dev-flex .dev-card-body {
+   max-width: 200px;
+   background-color: hsl(225, 100%, 94%);
+   text-align: center;
+   height: 9.8em;
+   border-radius: 0 0 15px 15px;
+   box-shadow: -16px 14px 21px -6px rgba(250,247,250,0.11);
+}
+
+.dev-flex .dev-card-body h2 {
+    font-size: .99em;
+    padding: .93em;
+
+}
+
+.dev-flex .dev-two {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.dev-btn {
+  margin-top: 2.5em;
+  margin-bottom: auto;
+}
+
+.dev-flex .dev-card-body a {
+  font-size: 1.2em;
+  text-decoration: none;
+  background-color: #3882f6;
+  padding: 0.65em 0.9em;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+}
+
+.dev-flex .dev-card-body a:hover {
+  background-color: #1c66df;
+}
+
+.dev-flex .dev-card-body a .fa-brands {
+  color: #fff;
+  font-size: 1em;
+}
+/*********End  Developers Section ************/
+
+/******* Devlopers media queries *************/
+
+@media only screen and (max-width: 600px) {
+  .collasped-devs .dev-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dev-flex img {
+    max-width: 200px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/******** Developers Sec. @300px max-width media queries ****/
+
+.developers h1 {
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/***** Footer @390 media queries  *****/
+
+@media screen and (max-width: 393){
+
+    .developers h1 {
+        text-align: center;
+        font-size: 1.98em;
+    }
+}
