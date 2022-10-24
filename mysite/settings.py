@@ -10,7 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from dotenv import load_dotenv
 from pathlib import Path
+# import environ
+load_dotenv()
+
+DB_PASSWORD = os.environ['DB_PASSWORD']
+
+
+# Initialise environment variables
+# env = environ.Env()
+# environ.Env.read_env()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +31,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--#eumi&#)999wf#&7k5p!w61z2m(i&0v-hll8!wl+r(5l16s9('
+# SECRET_KEY = 'django-insecure--#eumi&#)999wf#&7k5p!w61z2m(i&0v-hll8!wl+r(5l16s9('
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://prince-adimado-prt.azurewebsites.net']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -77,12 +89,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+NAME = os.environ['NAME']
+USER= os.environ['USER']
+
 DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio-db',
-        'USER': 'primado@portfolio-prt-db',
-        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'NAME': NAME,
+        'USER': USER,
+        'PASSWORD': DB_PASSWORD,
         'HOST': 'portfolio-prt-db.postgres.database.azure.com',
         'PORT': '5432',
         'OPTIONS': {

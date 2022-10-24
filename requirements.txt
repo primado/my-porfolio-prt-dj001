@@ -2,3 +2,5 @@ django==3.2
 pillow
 whitenoise
 psycopg2-binary
+django-environ
+python-dotenv
